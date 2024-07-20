@@ -378,8 +378,8 @@ span {
 }
 .about-wrapper .about-content .about-icon-items {
   margin-top: 50px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  align-items: center;
   gap: 30px;
   border-bottom: 1px solid var(--border);
   padding-bottom: 40px;
@@ -2732,6 +2732,7 @@ span {
   padding: 20px 0;
   text-align: left;
   position: relative;
+  text-transform: capitalize;
   transition: all 0.4s ease-in-out;
 }
 .header-main .main-menu ul li a:hover {
