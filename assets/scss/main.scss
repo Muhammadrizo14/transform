@@ -86,3 +86,15 @@ Version: 1.0.0
 @import "_testimonial";
 
 //>> Template Section Style End <<//
+
+.calculate__rates {
+  border: 1px solid var(--theme) !important;
+  color: var(--black) !important;
+  padding: 18px 20px !important;
+  border-radius: 5px !important;
+  width: 100%;
+
+  &::placeholder {
+    color: var(--text) !important;
+  }
+}

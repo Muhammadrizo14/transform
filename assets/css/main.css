@@ -386,6 +386,7 @@ span {
 }
 @media (max-width: 1399px) {
   .about-wrapper .about-content .about-icon-items {
+    display: flex;
     flex-wrap: wrap;
     padding-bottom: 30px;
     margin-top: 30px;
@@ -2128,11 +2129,17 @@ span {
   position: absolute;
   bottom: 0;
   left: 0;
+  display: none;
 }
 .footer-widgets-wrapper .shape-2 {
   position: absolute;
   top: 0;
   right: 0;
+}
+@media (max-width: 1399px) {
+  .footer-widgets-wrapper .shape-2 {
+    display: none;
+  }
 }
 @media (max-width: 1199px) {
   .footer-widgets-wrapper {
@@ -2516,10 +2523,20 @@ span {
   bottom: 0;
   left: -5%;
 }
+@media (max-width: 1399px) {
+  .footer-section .shape-1 {
+    display: none;
+  }
+}
 .footer-section .shape-2 {
   position: absolute;
   bottom: 0;
   right: -3%;
+}
+@media (max-width: 1399px) {
+  .footer-section .shape-2 {
+    display: none;
+  }
 }
 .footer-section .footer-shape-4 {
   position: absolute;
@@ -7659,4 +7676,18 @@ input.main-search-input::placeholder {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+}
+
+.calculate__rates {
+  border: 1px solid var(--theme) !important;
+  color: var(--black) !important;
+  padding: 18px 20px !important;
+  border-radius: 5px !important;
+  width: 100%;
+}
+.calculate__rates::-moz-placeholder {
+  color: var(--text) !important;
+}
+.calculate__rates::placeholder {
+  color: var(--text) !important;
 }/*# sourceMappingURL=main.css.map */
