@@ -8342,6 +8342,9 @@ input.main-search-input::placeholder {
 }
 
 @media (max-width: 700px) {
+  .mouse-cursor {
+    display: none;
+  }
   .popup__content {
     width: 95% !important;
   }
