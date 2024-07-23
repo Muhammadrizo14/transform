@@ -643,3 +643,37 @@ document.getElementById("send-data").addEventListener("click", (e) => {
     })
     .catch((error) => console.error("Error:", error));
 });
+
+const numberInput = document.getElementById("calculator");
+const numberRange = document.getElementById("numberRange");
+
+function formatNumber(value) {
+  return value.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
+numberInput.addEventListener("input", function (e) {
+  let value = e.target.value;
+  value = value.replace(/\D/g, "");
+  e.target.value = formatNumber(value);
+  numberRange.value = value ? parseInt(value.replace(/\s/g, ""), 10) : 0;
+});
+
+numberInput.addEventListener("keydown", function (e) {
+  if (
+    [46, 8, 9, 27, 13, 37, 38, 39, 40].indexOf(e.keyCode) !== -1 ||
+    (e.ctrlKey === true && [65, 67, 86, 88].indexOf(e.keyCode) !== -1) ||
+    (e.keyCode >= 35 && e.keyCode <= 40)
+  ) {
+    return;
+  }
+  if (
+    (e.shiftKey || e.keyCode < 48 || e.keyCode > 57) &&
+    (e.keyCode < 96 || e.keyCode > 105)
+  ) {
+    e.preventDefault();
+  }
+});
+
+numberRange.addEventListener("input", function (e) {
+  numberInput.value = formatNumber(e.target.value);
+});

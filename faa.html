@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор Комиссии</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      input,
+      output {
+        display: block;
+        margin-bottom: 10px;
+      }
+      label {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Калькулятор Комиссии</h1>
+    <label for="amount">Сумма в рублях</label>
+    <input
+      type="text"
+      id="amount"
+      placeholder="Введите сумму в рублях"
+      oninput="formatNumber(this)"
+      onchange="calculate()"
+    />
+
+    <label for="commission">Сумма комиссии</label>
+    <output id="commission">Сумма комиссии</output>
+
+    <label for="usd">Полученная сумма в долларах</label>
+    <output id="usd">Полученная сумма в долларах</output>
+
+    <label for="cny">Полученная сумма в юанях</label>
+    <output id="cny">Полученная сумма в юанях</output>
+
+    <script>
+      const currencyRates = {
+        usd: 75, // Пример курса рубль-доллар
+        cny: 11.5, // Пример курса рубль-юань
+      };
+
+      function formatNumber(input) {
+        let value = input.value.replace(/\s+/g, "").replace(/[^0-9]/g, "");
+        input.value = new Intl.NumberFormat("ru-RU").format(value);
+      }
+
+      function parseNumber(value) {
+        return parseFloat(value.replace(/\s+/g, "").replace(/,/g, "."));
+      }
+
+      function calculate() {
+        const amountInput = document.getElementById("amount").value;
+        const amount = parseNumber(amountInput);
+        const commission = calculateCommission(amount);
+        const amountAfterCommission = amount - commission;
+
+        const usdAmount = amountAfterCommission / (currencyRates.usd + 2);
+        const cnyAmount = amountAfterCommission / (currencyRates.cny + 0.2);
+
+        document.getElementById("commission").value = `${commission.toFixed(
+          2
+        )} рублей`;
+        document.getElementById("usd").value = `${usdAmount.toFixed(
+          2
+        )} долларов`;
+        document.getElementById("cny").value = `${cnyAmount.toFixed(2)} юаней`;
+      }
+
+      function calculateCommission(amount) {
+        if (amount <= 500000) {
+          return amount * 0.05;
+        } else if (amount <= 1000000) {
+          return amount * 0.04;
+        } else if (amount <= 5000000) {
+          return amount * 0.035;
+        } else if (amount <= 35000000) {
+          return amount * 0.03;
+        } else if (amount <= 100000000) {
+          return amount * 0.027;
+        } else if (amount <= 500000000) {
+          return amount * 0.02;
+        } else {
+          return amount * 0.015;
+        }
+      }
+    </script>
+  </body>
+</html>

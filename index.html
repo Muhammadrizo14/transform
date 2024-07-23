@@ -96,6 +96,12 @@
             </p>
             <div class="mobile-menu fix mb-3"></div>
             <button class="theme-btn feedback-window" onclick="showPopup()">Начать перевод</button>
+            <div class="social-icon d-flex align-items-center">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
           </div>
         </div>
       </div>
@@ -378,75 +384,85 @@
         </div>
       </div>
     </section>
-
-    <!--<< Team Section Start >>-->
-    <section class="team-section section-padding section-bg-2" id="howitworks">
-      <div class="line-shape">
-        <img src="assets/img/team/line-shape.png" alt="shape-img" />
-      </div>
-      <div class="mask-shape">
-        <img src="assets/img/team/mask-shape.png" alt="shape-img" />
-      </div>
+    
+    <section class="work-process-section fix section-padding pt-0">
       <div class="container">
-        <div class="section-title-area">
-          <div class="section-title">
-            <h2 class="text-white wow fadeInUp" data-wow-delay=".3s">
-              Как это работает
-            </h2>
+          <div class="section-title text-center">
+              <h2>Как Это Работает</h2>
           </div>
-        </div>
-        <div class="team-wrapper">
-          <div
-            class="team-items bor-top bor-bottom wow fadeInUp"
-            data-wow-delay=".3s"
-          >
-            <div class="team-title">
-              <span>1</span>
-              <h4>
-                <a href="#">Регистрация</a>
-              </h4>
-            </div>
-            <p>Регистрация на сайте</p>
+          <div class="process-work-wrapper">
+              <div class="line-shape">
+                  <img src="assets/img/process/linepng.png" alt="">
+              </div>
+              <div class="row">
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                      <div class="work-process-items text-center work-process-first">
+                          <div class="icon">
+                              <img class="howitworksimage" src="assets/img/process/01.svg" alt="img">
+                              <h6 class="number">
+                                  1
+                              </h6>
+                          </div>
+                          <div class="content">
+                              <h4>Регистрация</h4>
+                              <p>
+                                  In a free hour, when our power of choice is untrammeled and 
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                      <div class="work-process-items text-center work-process-second">
+                          <div class="content style-2">
+                              <h4>Выбрать страну</h4>
+                              <p>
+                                  In a free hour, when our power of choice is untrammeled and 
+                              </p>
+                          </div>
+                          <div class="icon">
+                              <img class="howitworksimage" src="assets/img/process/02.svg" alt="img">
+                              <h6 class="number">
+                                  2
+                              </h6>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                      <div class="work-process-items text-center work-process-first">
+                          <div class="icon">
+                              <img class="howitworksimage" src="assets/img/process/03.svg" alt="img">
+                              <h6 class="number">
+                                  3
+                              </h6>
+                          </div>
+                          <div class="content">
+                              <h4>Подтверждение перевода</h4>
+                              <p>
+                                  In a free hour, when our power of choice is untrammeled and 
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-4 col-md-6">
+                      <div class="work-process-items text-center work-process-second">
+                          <div class="content style-2">
+                              <h4>Успешный перевод</h4>
+                              <p>
+                                  In a free hour, when our power of choice is untrammeled and 
+                              </p>
+                          </div>
+                          <div class="icon">
+                              <img class="howitworksimage" src="assets/img/process/04.svg" alt="img">
+                              <h6 class="number">
+                                  4
+                              </h6>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </div>
-          <div
-            class="team-items bor-bottom pt-0 wow fadeInUp"
-            data-wow-delay=".5s"
-          >
-            <div class="team-title">
-              <span>2</span>
-              <h4>
-                <a href="#">Выбрать страну</a>
-              </h4>
-            </div>
-            <p>Выбирать страну Китай-Россия, Россия-Китай</p>
-          </div>
-          <div
-            class="team-items bor-bottom pt-0 wow fadeInUp"
-            data-wow-delay=".7s"
-          >
-            <div class="team-title">
-              <span>3</span>
-              <h4>
-                <a href="#">Подтверждение перевода</a>
-              </h4>
-            </div>
-            <p>Подтверждение личности</p>
-          </div>
-          <div
-            class="team-items bor-bottom pt-0 wow fadeInUp"
-            data-wow-delay=".9s"
-          >
-            <div class="team-title">
-              <span>4</span>
-              <h4>
-                <a href="#">Успешный перевод</a>
-              </h4>
-            </div>
-            <p>После подтверждение вы успешно перевели деньги</p>
-          </div>
-        </div>
       </div>
-    </section>
+  </section>
 
     <!--<< Pricing Section Start >>-->
     <section class="pricing-section section-bg fix section-padding" id="rates">
@@ -465,7 +481,7 @@
               </h2>
             </div>
           </div>
-          <div class="tab-content">
+          <!-- <div class="tab-content">
             <div id="monthly" class="tab-pane fade show active" role="tabpanel">
               <div class="row">
                 <div
@@ -575,7 +591,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <form id="contact-form" class="contact-form-items">
             <div class="row g-4">
               <div class="wow fadeInUp pt-3" data-wow-delay=".3s">
@@ -584,10 +600,10 @@
                   <input
                     class="calculate__rates"
                     type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Введите сумму"
+                    id="calculator"
+                    placeholder="Введите сумму в рублях"
                   />
+                  <input type="range" id="numberRange" min="0" max="1000000000" step="1">
                 </div>
               </div>
               <div class="col-lg-7 wow fadeInUp" data-wow-delay=".9s">

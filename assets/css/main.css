@@ -3698,11 +3698,11 @@ span {
   width: 100%;
   padding: 16px 40px;
 }
-.offcanvas__wrapper .offcanvas__content .offcanvas__contact .social-icon {
+.social-icon {
   margin-top: 30px;
   gap: 10px;
 }
-.offcanvas__wrapper .offcanvas__content .offcanvas__contact .social-icon a {
+.social-icon a {
   width: 45px;
   height: 45px;
   line-height: 45px;
@@ -8341,7 +8341,7 @@ input.main-search-input::placeholder {
   justify-content: center;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 9810px) {
   .mouse-cursor {
     display: none;
   }
@@ -8388,4 +8388,25 @@ input.main-search-input::placeholder {
   position: absolute;
   top: 0px;
   right: 0px;
+}
+
+@media (max-width: 800px) {
+  .work-process-first {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 0;
+  }
+  .work-process-second {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px;
+  }
+  .work-process-first .content {
+    text-align: start;
+  }
+  .work-process-second .content {
+    text-align: start;
+  }
 }
