@@ -149,23 +149,10 @@
     </div>
     <!-- Hero Section Start -->
     <section
-            class="hero-section fix hero-1 bg-cover"
-            style="background-image: url('assets/img/hero/hero-bg.jpg')"
+            class="hero-section fix hero-1 bg-hero"
     >
         <div class="text-transparent">
             <h2>Переводы</h2>
-        </div>
-        <div class="line-shape">
-            <img src="assets/img/hero/line-shape.png" alt="shape-img"/>
-        </div>
-        <div class="dot-shape">
-            <img src="assets/img/hero/dot-shape.png" alt="shape-img"/>
-        </div>
-        <div class="frame-shape">
-            <img src="assets/img/hero/frame.png" alt="shape-img"/>
-        </div>
-        <div class="mask-shape wow fadeInRight" data-wow-delay=".7s">
-            <img src="assets/img/hero/mask-shape.png" alt="shape-img"/>
         </div>
         <div class="container">
             <div class="row g-4 align-items-center">
@@ -174,7 +161,7 @@
                         <h1 class="wow fadeInUp" data-wow-delay=".4s">
                             Простой и быстрый перевод денег из России в Китай
                         </h1>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">
+                        <p class="wow fadeInUp" data-wow-delay=".6s" style="color: black">
                             Надежные и безопасные способы отправки денег в Китай по выгодным
                             тарифам
                         </p>
@@ -440,9 +427,9 @@
                         </h2>
                     </div>
                 </div>
-                <form id="contact-form" class="contact-form-items">
-                    <div class="row g-4">
-                        <div class="wow fadeInUp pt-3" data-wow-delay=".3s">
+                <div class="row g-4">
+                    <div class="calculator__wrap">
+                        <div class="col-lg-6 wow fadeInUp pt-3" data-wow-delay=".3s">
                             <div class="form-clt">
                                 <span style="color: var(--black)">Сумма месячного*</span>
                                 <input
@@ -451,9 +438,12 @@
                                         id="calculator"
                                         placeholder="Введите сумму в рублях"
                                         max="1000000000"
+                                        oninput="formatNumber(this)"
+                                        onchange="calculate()"
                                 />
-                                <div class="">
-                                    <input type="range" id="numberRange" min="2000" max="1000000000"  style="padding: 0;">
+                                <div>
+                                    <input type="range" id="numberRange" min="2000" max="1000000000"
+                                           style="padding: 0; width: 100%">
                                     <div>
                                         <ul class="d-flex align-items-center justify-content-between">
                                             <li>2 000</li>
@@ -466,11 +456,25 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-7 wow fadeInUp" data-wow-delay=".9s">
-                            <button type="submit" class="theme-btn">Проверить</button>
+                        <div class="col-lg-6 calculate__result">
+                                <h2 class="calculator__title">Лист графика и процент выплат кредита</h2>
+                                <ul class="calculator__list">
+                                    <li>
+                                        <p>Сумма комиссии: </p>
+                                        <output id="commission">0 рублей</output>
+                                    </li>
+                                    <li>
+                                        <p>Полученная сумма в долларах: </p>
+                                        <output id="usd">0 долларов</output>
+                                    </li>
+                                    <li>
+                                        <p>Полученная сумма в юанях: </p>
+                                        <output id="cny">0 юаней</output>
+                                    </li>
+                                </ul>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </section>

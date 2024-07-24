@@ -676,6 +676,7 @@ function formatNumberRange(value) {
 
 numberRange.addEventListener("input", function (e) {
   numberInput.value = formatNumberRange(e.target.value);
+  calculate()
 });
 
 

@@ -1,0 +1,893 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #222;
+  background: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.row,
+.col,
+.container {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.row::before,
+.row::after,
+.col::before,
+.col::after,
+.container::before,
+.container::after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.row {
+  margin: 0 -15px;
+}
+.col {
+  min-height: 1px;
+  padding: 0 15px;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 1200px;
+}
+.col.xs-1, .col.xs-2, .col.xs-3, .col.xs-4, .col.xs-5, .col.xs-6, .col.xs-7, .col.xs-8, .col.xs-9, .col.xs-10, .col.xs-11, .col.xs-12 {
+  float: left;
+}
+.col.xs-12 {width: 100%;}
+.col.xs-11 {width: 91.66666667%;}
+.col.xs-10 {width: 83.33333333%;}
+.col.xs-9 {width: 75%;}
+.col.xs-8 {width: 66.66666667%;}
+.col.xs-7 {width: 58.33333333%;}
+.col.xs-6 {width: 50%;}
+.col.xs-5 {width: 41.66666667%;}
+.col.xs-4 {width: 33.33333333%;}
+.col.xs-3 {width: 25%;}
+.col.xs-2 {width: 16.66666667%;}
+.col.xs-1 {width: 8.33333333%;}
+@media (min-width: 768px) {
+  .col.sm-1, .col.sm-2, .col.sm-3, .col.sm-4, .col.sm-5, .col.sm-6, .col.sm-7, .col.sm-8, .col.sm-9, .col.sm-10 .col.sm-11, .col.sm-12 {
+    float: left;}
+  .col.sm-12 {width: 100%;}
+  .col.sm-11 {width: 91.66666667%;}
+  .col.sm-10 {width: 83.33333333%;}
+  .col.sm-9 {width: 75%;}
+  .col.sm-8 {width: 66.66666667%;}
+  .col.sm-7 {width: 58.33333333%;}
+  .col.sm-6 {width: 50%;}
+  .col.sm-5 {width: 41.66666667%;}
+  .col.sm-4 {width: 33.33333333%;}
+  .col.sm-3 {width: 25%;}
+  .col.sm-2 {width: 16.66666667%;}
+  .col.sm-1 {width: 8.33333333%;}
+}
+@media (min-width: 992px) {
+  .col.md-1, .col.md-2, .col.md-3, .col.md-4, .col.md-5, .col.md-6, .col.md-7, .col.md-8, .col.md-9, .col.md-10, .col.md-11, .col.md-12 {
+    float: left;}
+  .col.md-12 {width: 100%;}
+  .col.md-11 {width: 91.66666667%;}
+  .col.md-10 {width: 83.33333333%;}
+  .col.md-9 {width: 75%;}
+  .col.md-8 {width: 66.66666667%;}
+  .col.md-7 {width: 58.33333333%;}
+  .col.md-6 {width: 50%;}
+  .col.md-5 {width: 41.66666667%;}
+  .col.md-4 {width: 33.33333333%;}
+  .col.md-3 {width: 25%;}
+  .col.md-2 {width: 16.66666667%;}
+  .col.md-1 {width: 8.33333333%;}
+}
+@media (min-width: 1200px) {
+  .col.lg-1, .col.lg-2, .col.lg-3, .col.lg-4, .col.lg-5, .col.lg-6, .col.lg-7, .col.lg-8, .col.lg-9, .col.lg-10, .col.lg-11, .col.lg-12 {
+    float: left;}
+  .col.lg-12 {width: 100%;}
+  .col.lg-11 {width: 91.66666667%;}
+  .col.lg-10 {width: 83.33333333%;}
+  .col.lg-9 {width: 75%;}
+  .col.lg-8 {width: 66.66666667%;}
+  .col.lg-7 {width: 58.33333333%;}
+  .col.lg-6 {width: 50%;}
+  .col.lg-5 {width: 41.66666667%;}
+  .col.lg-4 {width: 33.33333333%;}
+  .col.lg-3 {width: 25%;}
+  .col.lg-2 {width: 16.66666667%;}
+  .col.lg-1 {width: 8.33333333%;}
+}
+
+.form-control,
+.form-control:hover,
+.form-control:focus {
+  display: block;
+  position: relative;
+  width: 100%;
+  outline: 0;
+  padding: 9px 12px;
+  font-family: inherit;
+  line-height: normal;
+  font-size: 14px;
+  font-weight: normal;
+  vertical-align: middle;
+  min-height: 40px;
+  box-shadow: none;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.btn,
+.btn:hover,
+.btn:focus {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: 30px;
+  margin: 0;
+  padding: 4px 10px;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  text-align: center;
+  vertical-align: middle;
+  outline: 0;
+  background: #ff2e2e;
+  border: 1px solid #ff2e2e;
+  border-radius: 5px;
+  transition-property: border-color, background-color, box-shadow;
+  transition: .25s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn:hover,
+.btn:focus {
+  background: #ff0808;
+  border-color: #ff0808;
+  box-shadow: 0 0 20px rgba(255,8,8,.3);
+}
+
+a.btnOrder,
+a.btnOrder:hover,
+a.btnOrder:focus {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+  color: #fff;
+  text-decoration: none;
+  background: #ff2e2e;
+  border-radius: 5px;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+a.btnOrder:hover,
+a.btnOrder:focus {
+  background: #ff0808;
+  box-shadow: 0 0 20px rgba(255,8,8,.3);
+}
+a.btnOrder.big,
+a.btnOrder.big:hover,
+a.btnOrder.big:focus {
+  margin: 0;
+  padding: 10px 15px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+a.btnOrder.big.arrowLeft {
+  margin-left: 90px;
+}
+a.btnOrder.big.arrowRight {
+  margin-right: 90px;
+}
+a.btnOrder.big.arrowLeft::before,
+a.btnOrder.big.arrowRight::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  height: 50px;
+  margin: 0 0 10px 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all .2s ease;
+}
+a.btnOrder.big.arrowLeft::before {
+  left: -90px;
+  background-image: url('../images/btnArrowLeft.png');
+  background-position: bottom right;
+}
+a.btnOrder.big.arrowRight::after {
+  right: -90px;
+  background-image: url('../images/btnArrowRight.png');
+  background-position: bottom left;
+}
+
+a.btnOrder.big.arrowLeft:hover::before,
+a.btnOrder.big.arrowLeft:focus::before {
+  left: -85px;
+}
+a.btnOrder.big.arrowRight:hover::after,
+a.btnOrder.big.arrowRight:focus::after {
+  right: -85px;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.5);
+  transition: all .5s ease;
+}
+body.modal_open .modal {
+  display: block;
+}
+.modal .close {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.modal .modal-body {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 50%;
+  width: 400px;
+  margin: 0 -200px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(0,0,0,.5);
+}
+.modal .modal-body h1 {
+  margin: 0 0 20px 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 30px;
+}
+.modal .modal-body p {
+  margin: 0 0 10px 0;
+  padding: 0;
+  font-size: 11px;
+  line-height: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.modal .modal-body .form-control {
+  margin: 0 0 20px 0;
+}
+.modal .modal-body #message_result {
+  display: none;
+  margin: 0 0 20px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+.modal .modal-body #message_result.error {
+  display: block;
+  color: #fff;
+  background-color: #ee335e;
+  border-color: #ee335e;
+}
+.modal .modal-body #message_result.success {
+  display: block;
+  color: #fff;
+  background-color: #22c03c;
+  border-color: #22c03c;
+}
+
+.navbar {
+  position: relative;
+  z-index: 99;
+  margin: 0;
+  padding: 20px 0;
+  background: #fff;
+  line-height: 20px;
+  transition: padding .2s ease;
+}
+.navbar .openMenu {
+  display: block;
+  position: absolute;
+  z-index: 10;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: url('../images/icon-menu-open.png') no-repeat center;
+  background-size: cover;
+  cursor: pointer;
+}
+.navbar .logo {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.navbar .logo img {
+  width: auto;
+  height: 40px;
+  margin: 0 auto;
+  padding: 0;
+}
+.navbar .contacts,
+.navbar .contacts li {
+  display: block;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar .contacts {
+  display: none;
+  margin: 20px 0 -10px 0;
+  text-align: center;
+}
+.navbar .contacts li {
+  padding: 10px 0;
+  text-align: center;
+}
+.navbar .contacts li.phone p {
+  display: none;
+}
+.navbar .contacts li.phone a,
+.navbar .contacts li.phone a:hover,
+.navbar .contacts li.phone a:focus {
+  display: inline-block;
+  position: relative;
+  margin: 0 10px;
+  padding: 0;
+  font-size: 20px;
+  line-height: 20px;
+  color: #333;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+.navbar .contacts li.phone a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px dashed rgba(0,0,0,.2);
+  transition: all .2s ease;
+}
+.navbar .contacts li.phone a:hover,
+.navbar .contacts li.phone a:focus {
+  color: #ff2e2e;
+}
+.navbar .contacts li.phone a:hover::before,
+.navbar .contacts li.phone a:hover::before {
+  border-top-color: rgba(255,8,8,.3);
+}
+.navbar .contacts li a.whatsapp,
+.navbar .contacts li a.whatsapp:hover,
+.navbar .contacts li a.whatsapp:focus {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 50px;
+  font-size: 14px;
+  color: #00a82d;
+  font-weight: 400;
+  text-decoration: none;
+}
+.navbar .contacts li a.whatsapp .icon {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0;
+  padding: 0;
+  background: url('../images/icon-whatsapp.png') no-repeat center;
+  background-size: contain;
+}
+.navbar .contacts li a.btnOrder,
+.navbar .contacts li a.btnOrder:hover,
+.navbar .contacts li a.btnOrder:focus {
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+.navbar.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 50px rgba(0,0,0,.1);
+}
+.navbar.open .contacts {
+  display: block;
+}
+
+.header {
+  position: relative;
+  margin: 0;
+  padding: 150px 0;
+  min-height: 500px;
+  background: #5598e5;
+  background-image: url('../images/statue_of_liberty_mobile.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  text-align: center;
+}
+.header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(7,44,86,.7);
+}
+.header .container {
+  position: relative;
+  z-index: 3;
+}
+.header h1 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 300;
+  color: #fff;
+  margin: 0 0 50px 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,1);
+}
+.header h2 {
+  margin: 0 0 50px 0;
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 300;
+  color: #fff100;
+  text-shadow: 0 1px 3px rgba(0,0,0,1);
+}
+
+
+.screen {
+  margin: 0;
+  padding: 100px 0;
+}
+.screen-head {
+  margin: 0;
+  padding: 0 0 50px 0;
+  text-align: center;
+}
+.screen-head h1 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 700;
+}
+.screen-head h2 {
+  display: block;
+  margin: 10px 0 0 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.screen-body {
+  margin: 0;
+  padding: 0;
+}
+.screen-footer {
+  margin: 0;
+  padding: 50px 0 0 0;
+  text-align: center;
+}
+
+.screen1 {
+  background: #f7f7f7;
+}
+.about {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 500px;
+}
+.about .cover {
+  margin: 0;
+  padding: 0;
+}
+.about .cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+.about .text {
+  margin: 50px 0 0 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: 300;
+  text-align: left;
+}
+
+.card1 {
+  position: relative;
+  margin: 0 0 30px 0;
+  padding: 0 0 0 70px;
+  text-align: left;
+}
+.card1 .icon {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+}
+.card1 .icon img {
+  width: 50px;
+  height: 50px;
+}
+.card1 .title {
+  display: block;
+  margin: 0 0 15px 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.screen3 {
+  background: #d3e4fb;
+}
+.who {
+  margin: 0;
+  padding: 0;
+}
+.who .item {
+  position: relative;
+  margin: 0;
+  padding: 90px 20px 20px 20px;
+  text-align: center;
+  border-bottom: 1px solid #c1d1e5;
+}
+.who .item:last-child {
+  border-bottom: 0;
+}
+.who .item .icon {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 0 -25px;
+  padding: 0;
+}
+.who .item .icon img {
+  width: 50px;
+  height: 50px;
+}
+.who .item .title {
+  display: block;
+  margin: 0 0 15px 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.screen4 {
+  padding: 50px 0;
+  background-image: linear-gradient(to right, rgb(9, 67, 131) 0%, rgb(14, 102, 200) 100%);
+  color: #FFF;
+}
+.screen5 .screen-body {
+  text-align: center;
+}
+
+.result-photo {
+  display: block;
+  overflow: hidden;
+  height: 200px;
+  margin: 20px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.map {
+  margin: 0;
+  padding: 0;
+  height: 500px;
+}
+
+.iphone {
+  margin: 0;
+  padding: 0;
+  background: #0a0a0a;
+}
+.iphone-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.iphone-container .body {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 50px 0;
+  text-align: left;
+}
+.iphone-container .body h1 {
+  display: inline-block;
+  position: relative;
+  margin: 5px 0;
+  padding: 0;
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 400;
+  color: #fff;
+}
+.iphone-container .body h1.red {
+  font-size: 40px;
+  line-height: 60px;
+  font-weight: 700;
+  color: #ff0808;
+}
+.iphone-container .body p {
+  display: block;
+  margin: 20px 0 50px 0;
+  padding: 0;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+  color: rgba(255,255,255,.5);
+}
+
+.iphone-container .cover {
+  position: relative;
+  z-index: 1;
+  margin: -100px 0 0 0;
+  padding: 0;
+  text-align: center;
+}
+.iphone-container .cover img {
+  display: block;
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .navbar .openMenu {
+    display: none;
+  }
+  .navbar .logo {
+    float: left;
+    margin: -20px 0;
+  }
+  .navbar .logo img {
+    height: 60px;
+  }
+  .navbar {
+    padding: 50px 0;
+  }
+  .navbar.fixed {
+    padding: 20px 0;
+  }
+  .navbar.fixed .logo {
+    margin: -10px 0;
+  }
+  .navbar.fixed .logo img {
+    height: 40px;
+  }
+  .navbar .contacts {
+    display: block;
+    float: right;
+    margin: 0 -5px;
+  }
+  .navbar .contacts li {
+    float: left;
+    padding: 0;
+  }
+  .navbar .contacts li.phone p {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    font-size: 11px;
+    line-height: 20px;
+    color: rgba(0,0,0,.8);
+    text-align: center;
+  }
+  .navbar .contacts li a.btnOrder,
+  .navbar .contacts li a.btnOrder:hover,
+  .navbar .contacts li a.btnOrder:focus {
+    margin: -5px 0;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  .navbar .contacts li a.whatsapp,
+  .navbar .contacts li a.whatsapp:hover,
+  .navbar .contacts li a.whatsapp:focus {
+    width: 40px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar .contacts li a.whatsapp .text {
+    display: none;
+  }
+  .header {
+    background-image: url('../images/statue_of_liberty.jpg');
+    background-position: top right;
+    text-align: left;
+  }
+  .header h1 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .header h2 {
+    font-size: 24px;
+    line-height: 34px;
+  }
+  .iphone-container {
+    display: flex;
+    align-items: center;
+  }
+  .iphone-container .body {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+  }
+  .iphone-container .cover {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .about {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+  }
+  .about .cover {
+    margin: 0 20px;
+    flex: 1 1 auto;
+    width: 50%;
+  }
+  .about .text {
+    margin: 0 20px;
+    flex: 1 1 auto;
+    width: 50%;
+  }
+  .who {
+    display: flex;
+    flex-flow: row wrap;
+    overflow: hidden;
+  }
+  .who .item {
+    width: 50%;
+    margin: 0 0 -1px -1px;
+    padding: 100px 30px 30px 30px;
+    border-left: 1px solid #c1d1e5;
+  }
+  .who .item .icon {
+    top: 30px;
+  }
+  .header h1 {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  .header h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+
+
+
+
+.body-success {
+  overflow: hidden;
+  height: 100%;
+}
+.sBody,
+.sBodyWrap {
+  display: bllock;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  background: url('../images/statue_of_liberty.jpg') no-repeat right center;
+  background-size: cover;
+}
+.sBodyWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+  position: absolute;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  background: rgba(7,44,86,.7);
+}
+.sBodyWrap::before,
+.sBodyWrap::after {
+  content: "";
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  display: block;
+  min-height: 1px;
+}
+.sBodyCont {
+  display: block;
+  position: relative;
+  margin: 50px auto;
+  padding: 0 30px;
+  text-align: center;
+}
+.sBodyCont h1 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 32px;
+  line-height: 50px;
+  font-weight: 400;
+  color: #fff;
+}
+.sBodyCont h2 {
+  display: block;
+  margin: 0 0 50px 0;
+  padding: 0;
+  font-size: 26px;
+  line-height: 40px;
+  font-weight: 400;
+  color: #fff;
+}
