@@ -46,6 +46,11 @@ Js TABLE OF CONTENTS
       $(".offcanvas__overlay").addClass("overlay-open");
     });
 
+    $(".sidebar__closer").on("click", function () {
+      $(".offcanvas__info").removeClass("info-open");
+      $(".offcanvas__overlay").removeClass("overlay-open");
+    });
+
     //>> Body Overlay Js Start <<//
     $(".body-overlay").on("click", function () {
       $(".offcanvas__area").removeClass("offcanvas-opened");
@@ -634,7 +639,8 @@ document.getElementById("send-data").addEventListener("click", (e) => {
     .then((response) => response.json())
     .then((data) => {
       if (data.ok) {
-        alert("Message sent successfully!");
+        window.location.href = 'feedback.html';
+
         document.querySelector(".user-name").value = "";
         document.querySelector(".user-phone").value = "";
       } else {
