@@ -653,16 +653,6 @@ document.getElementById("send-data").addEventListener("click", (e) => {
 const numberInput = document.getElementById("calculator");
 const numberRange = document.getElementById("numberRange");
 
-function formatNumber(value) {
-  return value.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-}
-
-numberInput.addEventListener("input", function (e) {
-  let value = e.target.value;
-  value = value.replace(/\D/g, "");
-  e.target.value = formatNumber(value);
-  numberRange.value = value ? parseInt(value.replace(/\s/g, ""), 10) : 0;
-});
 
 numberInput.addEventListener("keydown", function (e) {
   if (
@@ -680,6 +670,62 @@ numberInput.addEventListener("keydown", function (e) {
   }
 });
 
+function formatNumberRange(value) {
+  return value.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
 numberRange.addEventListener("input", function (e) {
-  numberInput.value = formatNumber(e.target.value);
+  numberInput.value = formatNumberRange(e.target.value);
 });
+
+
+
+const currencyRates = {
+  usd: 75, // Пример курса рубль-доллар
+  cny: 11.5, // Пример курса рубль-юань
+};
+
+function formatNumber(input) {
+  let value = input.value.replace(/\s+/g, "").replace(/[^0-9]/g, "");
+  input.value = new Intl.NumberFormat("ru-RU").format(value);
+}
+
+function parseNumber(value) {
+  return parseFloat(value.replace(/\s+/g, "").replace(/,/g, "."));
+}
+
+function calculate() {
+  const amountInput = numberInput.value;
+  const amount = parseNumber(amountInput);
+  const commission = calculateCommission(amount);
+  const amountAfterCommission = amount - commission;
+
+  const usdAmount = amountAfterCommission / (currencyRates.usd + 2);
+  const cnyAmount = amountAfterCommission / (currencyRates.cny + 0.2);
+
+  document.getElementById("commission").value = `${commission.toFixed(
+    2
+  )} рублей`;
+  document.getElementById("usd").value = `${usdAmount.toFixed(
+    2
+  )} долларов`;
+  document.getElementById("cny").value = `${cnyAmount.toFixed(2)} юаней`;
+}
+
+function calculateCommission(amount) {
+  if (amount <= 500000) {
+    return amount * 0.05;
+  } else if (amount <= 1000000) {
+    return amount * 0.04;
+  } else if (amount <= 5000000) {
+    return amount * 0.035;
+  } else if (amount <= 35000000) {
+    return amount * 0.03;
+  } else if (amount <= 100000000) {
+    return amount * 0.027;
+  } else if (amount <= 500000000) {
+    return amount * 0.02;
+  } else {
+    return amount * 0.015;
+  }
+}
