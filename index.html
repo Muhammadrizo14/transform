@@ -437,12 +437,12 @@
                                         type="text"
                                         id="calculator"
                                         placeholder="Введите сумму в рублях"
-                                        max="1000000000"
+                                        max="1000000"
                                         oninput="formatNumber(this)"
                                         onchange="calculate()"
                                 />
                                 <div>
-                                    <input type="range" id="numberRange" min="2000" max="1000000000"
+                                    <input type="range" id="numberRange" min="2000" max="1000000"
                                            style="padding: 0; width: 100%">
                                     <div>
                                         <ul class="d-flex align-items-center justify-content-between">
@@ -457,21 +457,21 @@
                             </div>
                         </div>
                         <div class="col-lg-6 calculate__result">
-                                <h2 class="calculator__title">Лист графика и процент выплат кредита</h2>
-                                <ul class="calculator__list">
-                                    <li>
-                                        <p>Сумма комиссии: </p>
-                                        <output id="commission">0 рублей</output>
-                                    </li>
-                                    <li>
-                                        <p>Полученная сумма в долларах: </p>
-                                        <output id="usd">0 долларов</output>
-                                    </li>
-                                    <li>
-                                        <p>Полученная сумма в юанях: </p>
-                                        <output id="cny">0 юаней</output>
-                                    </li>
-                                </ul>
+                            <h2 class="calculator__title">Лист графика и процент выплат кредита</h2>
+                            <ul class="calculator__list">
+                                <li>
+                                    <p>Сумма комиссии: </p>
+                                    <output id="commission">0 рублей</output>
+                                </li>
+                                <li>
+                                    <p>Полученная сумма в долларах: </p>
+                                    <output id="usd">0 долларов</output>
+                                </li>
+                                <li>
+                                    <p>Полученная сумма в юанях: </p>
+                                    <output id="cny">0 юаней</output>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

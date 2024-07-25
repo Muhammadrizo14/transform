@@ -649,10 +649,8 @@ document.getElementById("send-data").addEventListener("click", (e) => {
     })
     .catch((error) => console.error("Error:", error));
 });
-
 const numberInput = document.getElementById("calculator");
 const numberRange = document.getElementById("numberRange");
-
 
 numberInput.addEventListener("keydown", function (e) {
   if (
@@ -675,16 +673,36 @@ function formatNumberRange(value) {
 }
 
 numberRange.addEventListener("input", function (e) {
-  numberInput.value = formatNumberRange(e.target.value);
-  calculate()
+  const formattedValue = formatNumberRange(e.target.value);
+  numberInput.value = formattedValue;
+  calculate();
 });
 
+async function fetchCurrencyRates() {
+  const apiKey = '0fd592091dd93ed09d5bb220'; // Замените на ваш API ключ
+  const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/RUB`;
 
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    if (data.result === "success") {
+      currencyRates.usd = data.conversion_rates.USD;
+      currencyRates.cny = data.conversion_rates.CNY;
+    } else {
+      console.error('Ошибка при получении данных:', data['error-type']);
+    }
+  } catch (error) {
+    console.error('Ошибка при выполнении запроса:', error);
+  }
+}
 
 const currencyRates = {
   usd: 75, // Пример курса рубль-доллар
   cny: 11.5, // Пример курса рубль-юань
 };
+
+fetchCurrencyRates();
 
 function formatNumber(input) {
   let value = input.value.replace(/\s+/g, "").replace(/[^0-9]/g, "");
