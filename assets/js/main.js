@@ -111,6 +111,7 @@ Js TABLE OF CONTENTS
       });
       init.on("slideChange", animated);
     }
+
     animated_swiper(sliderActive2, sliderInit2);
     //>> Banner Animation <<//
 
@@ -540,13 +541,13 @@ Js TABLE OF CONTENTS
 
     $(".search-trigger").on("click", function (e) {
       e.preventDefault();
-      $searchWrap.animate({ opacity: "toggle" }, 500);
+      $searchWrap.animate({opacity: "toggle"}, 500);
       $navSearch.add($searchClose).addClass("open");
     });
 
     $(".search-close").on("click", function (e) {
       e.preventDefault();
-      $searchWrap.animate({ opacity: "toggle" }, 500);
+      $searchWrap.animate({opacity: "toggle"}, 500);
       $navSearch.add($searchClose).removeClass("open");
     });
 
@@ -573,8 +574,8 @@ Js TABLE OF CONTENTS
           o = !1;
         (window.onmousemove = function (s) {
           o ||
-            (t.style.transform =
-              "translate(" + s.clientX + "px, " + s.clientY + "px)"),
+          (t.style.transform =
+            "translate(" + s.clientX + "px, " + s.clientY + "px)"),
             (e.style.transform =
               "translate(" + s.clientX + "px, " + s.clientY + "px)"),
             (n = s.clientY),
@@ -585,13 +586,14 @@ Js TABLE OF CONTENTS
           }),
           $("body").on("mouseleave", "a, .cursor-pointer", function () {
             ($(this).is("a") && $(this).closest(".cursor-pointer").length) ||
-              (e.classList.remove("cursor-hover"),
+            (e.classList.remove("cursor-hover"),
               t.classList.remove("cursor-hover"));
           }),
           (e.style.visibility = "visible"),
           (t.style.visibility = "visible");
       }
     }
+
     $(function () {
       mousecursor();
     });
@@ -650,7 +652,6 @@ document.getElementById("send-data").addEventListener("click", (e) => {
     .catch((error) => console.error("Error:", error));
 });
 const numberInput = document.getElementById("calculator");
-const numberRange = document.getElementById("numberRange");
 
 numberInput.addEventListener("keydown", function (e) {
   if (
@@ -670,15 +671,6 @@ numberInput.addEventListener("keydown", function (e) {
 
 });
 
-function formatNumberRange(value) {
-  return value.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-}
-
-numberRange.addEventListener("input", function (e) {
-  const formattedValue = formatNumberRange(e.target.value);
-  numberInput.value = formattedValue;
-  calculate();
-});
 
 async function fetchCurrencyRates() {
   const apiKey = '0fd592091dd93ed09d5bb220'; // Замените на ваш API ключ
