@@ -8371,7 +8371,7 @@ input.main-search-input::placeholder {
   position: absolute;
   background-image: url(../img/bg.jpg);
   background-size: cover;
-  filter: blur(10px);
+  filter: grayscale(60%);
 }
 
 .calculate__rates {
@@ -8386,7 +8386,7 @@ input.main-search-input::placeholder {
 }
 .calculate__rates::placeholder {
   color: var(--text) !important;
-} /*# sourceMappingURL=main.css.map */
+}
 
 .popup {
   display: none;
@@ -8440,6 +8440,7 @@ input.main-search-input::placeholder {
 }
 
 .popup__content h2 {
+  font-size: 24px;
   text-align: center;
 }
 
@@ -8448,6 +8449,15 @@ input.main-search-input::placeholder {
   position: absolute;
   top: 0px;
   right: 0px;
+}
+
+
+
+
+@media (min-width: 991px) {
+  .mobile-socials {
+    display: none !important;
+  }
 }
 
 @media (max-width: 800px) {

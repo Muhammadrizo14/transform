@@ -651,6 +651,8 @@ document.getElementById("send-data").addEventListener("click", (e) => {
     })
     .catch((error) => console.error("Error:", error));
 });
+
+
 const numberInput = document.getElementById("calculator");
 
 numberInput.addEventListener("keydown", function (e) {
@@ -668,9 +670,7 @@ numberInput.addEventListener("keydown", function (e) {
     e.preventDefault();
   }
   calculate();
-
 });
-
 
 async function fetchCurrencyRates() {
   const apiKey = '0fd592091dd93ed09d5bb220'; // Замените на ваш API ключ
@@ -710,36 +710,33 @@ function parseNumber(value) {
 function calculate() {
   const amountInput = numberInput.value;
   const amount = parseNumber(amountInput);
-  const commission = calculateCommission(amount);
+  const commissionPercentage = getCommissionPercentage(amount);
+  const commission = amount * (commissionPercentage / 100);
   const amountAfterCommission = amount - commission;
 
-  const usdAmount = amountAfterCommission / (currencyRates.usd + 2);
-  const cnyAmount = amountAfterCommission / (currencyRates.cny + 0.2);
+  const usdAmount = Math.round(amountAfterCommission / (currencyRates.usd + 2));
+  const cnyAmount = Math.round(amountAfterCommission / (currencyRates.cny + 0.2));
 
-  document.getElementById("commission").value = `${commission.toFixed(
-    2
-  )} рублей`;
-  document.getElementById("usd").value = `${usdAmount.toFixed(
-    2
-  )} долларов`;
-  document.getElementById("cny").value = `${cnyAmount.toFixed(2)} юаней`;
+  document.getElementById("commission").value = `${commissionPercentage.toFixed(2)}%`;
+  document.getElementById("usd").value = `${new Intl.NumberFormat("ru-RU").format(usdAmount)} долларов`;
+  document.getElementById("cny").value = `${new Intl.NumberFormat("ru-RU").format(cnyAmount)} юаней`;
 }
 
-function calculateCommission(amount) {
+function getCommissionPercentage(amount) {
   if (amount <= 500000) {
-    return amount * 0.05;
+    return 5;
   } else if (amount <= 1000000) {
-    return amount * 0.04;
+    return 4;
   } else if (amount <= 5000000) {
-    return amount * 0.035;
+    return 3.5;
   } else if (amount <= 35000000) {
-    return amount * 0.03;
+    return 3;
   } else if (amount <= 100000000) {
-    return amount * 0.027;
+    return 2.7;
   } else if (amount <= 500000000) {
-    return amount * 0.02;
+    return 2;
   } else {
-    return amount * 0.015;
+    return 1.5;
   }
 }
 
