@@ -672,6 +672,11 @@ numberInput.addEventListener("keydown", function (e) {
   calculate();
 });
 
+const currencyRates = {
+  usd: 0, // Пример курса рубль-доллар
+  cny: 0, // Пример курса рубль-юань
+};
+
 async function fetchCurrencyRates() {
   const apiKey = '0fd592091dd93ed09d5bb220'; // Замените на ваш API ключ
   const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/RUB`;
@@ -691,10 +696,7 @@ async function fetchCurrencyRates() {
   }
 }
 
-const currencyRates = {
-  usd: 75, // Пример курса рубль-доллар
-  cny: 11.5, // Пример курса рубль-юань
-};
+
 
 fetchCurrencyRates();
 
@@ -714,8 +716,8 @@ function calculate() {
   const commission = amount * (commissionPercentage / 100);
   const amountAfterCommission = amount - commission;
 
-  const usdAmount = Math.round(amountAfterCommission / (currencyRates.usd + 2));
-  const cnyAmount = Math.round(amountAfterCommission / (currencyRates.cny + 0.2));
+  const usdAmount = Math.round(amountAfterCommission * (currencyRates.usd));
+  const cnyAmount = Math.round(amountAfterCommission * (currencyRates.cny + 0.2));
 
   document.getElementById("commission").value = `${commissionPercentage.toFixed(2)}%`;
   document.getElementById("usd").value = `${new Intl.NumberFormat("ru-RU").format(usdAmount)} долларов`;
