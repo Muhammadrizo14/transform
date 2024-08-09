@@ -652,33 +652,44 @@ document.getElementById("send-data").addEventListener("click", (e) => {
     .catch((error) => console.error("Error:", error));
 });
 
-
 const numberInput = document.getElementById("calculator");
 
-numberInput.addEventListener("keydown", function (e) {
-  if (
-    [46, 8, 9, 27, 13, 37, 38, 39, 40].indexOf(e.keyCode) !== -1 ||
-    (e.ctrlKey === true && [65, 67, 86, 88].indexOf(e.keyCode) !== -1) ||
-    (e.keyCode >= 35 && e.keyCode <= 40)
-  ) {
-    return;
-  }
-  if (
-    (e.shiftKey || e.keyCode < 48 || e.keyCode > 57) &&
-    (e.keyCode < 96 || e.keyCode > 105)
-  ) {
-    e.preventDefault();
-  }
+// Use the input event instead of keydown
+numberInput.addEventListener("input", function (e) {
+  // Validate the input to allow only numbers
+  validateInput(e);
+
+  // Format the number
+  formatNumber(this);
+
+  // Recalculate the values
   calculate();
 });
 
+function validateInput(e) {
+  const keyCode = e.keyCode || e.which;
+  if (
+    [46, 8, 9, 27, 13, 37, 38, 39, 40].indexOf(keyCode) !== -1 ||
+    (e.ctrlKey === true && [65, 67, 86, 88].indexOf(keyCode) !== -1) ||
+    (keyCode >= 35 && keyCode <= 40)
+  ) {
+    return; // Allow specific keys
+  }
+  if (
+    (e.shiftKey || keyCode < 48 || keyCode > 57) &&
+    (keyCode < 96 || keyCode > 105)
+  ) {
+    e.preventDefault();
+  }
+}
+
 const currencyRates = {
-  usd: 0, // Пример курса рубль-доллар
-  cny: 0, // Пример курса рубль-юань
+  usd: 0, // Example exchange rate RUB to USD
+  cny: 0, // Example exchange rate RUB to CNY
 };
 
 async function fetchCurrencyRates() {
-  const apiKey = '0fd592091dd93ed09d5bb220'; // Замените на ваш API ключ
+  const apiKey = '0fd592091dd93ed09d5bb220'; // Replace with your API key
   const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/RUB`;
 
   try {
@@ -689,14 +700,12 @@ async function fetchCurrencyRates() {
       currencyRates.usd = data.conversion_rates.USD;
       currencyRates.cny = data.conversion_rates.CNY;
     } else {
-      console.error('Ошибка при получении данных:', data['error-type']);
+      console.error('Error fetching data:', data['error-type']);
     }
   } catch (error) {
-    console.error('Ошибка при выполнении запроса:', error);
+    console.error('Request failed:', error);
   }
 }
-
-
 
 fetchCurrencyRates();
 
@@ -716,7 +725,7 @@ function calculate() {
   const commission = amount * (commissionPercentage / 100);
   const amountAfterCommission = amount - commission;
 
-  const usdAmount = Math.round(amountAfterCommission * (currencyRates.usd));
+  const usdAmount = Math.round(amountAfterCommission * currencyRates.usd);
   const cnyAmount = Math.round(amountAfterCommission * (currencyRates.cny + 0.2));
 
   document.getElementById("commission").value = `${commissionPercentage.toFixed(2)}%`;
@@ -741,6 +750,7 @@ function getCommissionPercentage(amount) {
     return 1.5;
   }
 }
+
 
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,
